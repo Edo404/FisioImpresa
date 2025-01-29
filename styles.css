@@ -1,6 +1,7 @@
 :root {
     --primary-color: #644cbb;
     --secondary-color: #dbeb04;
+    --third-color: #38346c
   }
 
   * {
@@ -151,7 +152,7 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    gap: 20px;
+    gap: 50px;
   }
 
   .team-member {
@@ -162,14 +163,14 @@
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 4px solid white;
+    border: 3px solid var(--third-color);
     margin-bottom: 10px;
   }
 
   .team-member.center img {
-    width: 180px;
-    height: 180px;
-    margin-bottom: 15px;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
   }
 
   .team-member h3 {
@@ -182,6 +183,113 @@
     margin: 0;
   }
 
+
+
+
+
+
+
+
+
+  .mission {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.mission-title {
+    color: white;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;  /* Allows cards to wrap when space is tight */
+    margin: 0 20px;   /* Add some padding to the sides */
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    transform: translateY(20px); /* Initially hidden subtitle with a slight offset */
+}
+
+.card-title {
+    font-size: 1.5em;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.card-subtitle {
+    display: block;
+    font-size: 1em;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover .card-subtitle {
+    opacity: 1;
+}
+
+.card:hover .card-title {
+    transform: translateY(-30px); /* Slide up the title */
+}
+
+.card:hover .card-content {
+    opacity: 1;
+    transform: translateY(0); /* Slide the subtitle into view */
+}
+
+.card:nth-child(1) {
+    background-image: url('https://via.placeholder.com/250x350/ff7f7f');
+    background-size: cover;
+    background-position: center;
+}
+
+.card:nth-child(2) {
+    background-image: url('https://via.placeholder.com/250x350/7fffd4');
+    background-size: cover;
+    background-position: center;
+}
+
+.card:nth-child(3) {
+    background-image: url('https://via.placeholder.com/250x350/ffcc00');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+
+
+
   @media (max-width: 768px) {
     .nav-links {
       display: none;
@@ -190,6 +298,10 @@
 
     .hamburger {
       display: flex;
+    }
+
+    .team-section{
+        padding: 100px 20px;
     }
 
     .team-container {
@@ -203,7 +315,20 @@
     }
 
     .team-member.center img {
-      width: 140px;
-      height: 140px;
+      width: 170px;
+      height: 170px;
+    }
+
+
+
+    .cards-container {
+        flex-direction: column;
+        align-items: center; /* Center the cards in a column layout */
+    }
+
+    .card {
+        width: 80%;
+        height: 300px; /* Adjust height for smaller screens */
+        margin-bottom: 20px; /* Space between stacked cards */
     }
   }

@@ -26,3 +26,22 @@ document.querySelectorAll('.card').forEach(card => {
         subtitle.style.display = 'none';
     });
 });
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById("name").value.trim();
+    const surname = document.getElementById("surname").value.trim();
+    const company = document.getElementById("company").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // Simple validation
+    if (name && surname && email && message) {
+        alert("Grazie per il Messaggio!");
+        this.reset(); // Clear the form
+    } else {
+        alert("Per favore, compila i campi obbligatori");
+    }
+});

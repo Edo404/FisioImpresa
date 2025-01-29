@@ -140,7 +140,7 @@
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 200px 20px;
+    padding: 150px 20px;
   }
 
   .team-section h2 {
@@ -205,7 +205,7 @@
 .cards-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;  /* Allows cards to wrap when space is tight */
     margin: 0 20px;   /* Add some padding to the sides */
 }
@@ -332,3 +332,112 @@
         margin-bottom: 20px; /* Space between stacked cards */
     }
   }
+
+
+
+
+
+
+
+
+
+
+  /* Section Styling */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: #ffffff;
+}
+
+/* Container */
+.contact-container {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Form Title */
+.contact-container h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: var(--third-color);
+}
+
+/* Form Styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input and Textarea Styles */
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9em;
+    font-weight: bold;
+    /* color: #6b7280; */
+    color: var(--third-color);
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+    background: #f9fafb;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--third-color);
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3);
+    background: white;
+}
+
+/* Button Styling */
+.submit-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.submit-btn:active {
+    transform: translateY(1px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .contact-container {
+        padding: 20px;
+    }
+
+    .contact-container h2 {
+        font-size: 1.5em;
+    }
+}

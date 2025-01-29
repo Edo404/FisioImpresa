@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page</title>
+  <title>FisioImpresa</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -17,17 +17,17 @@
       </div>
       <div class="nav-links" id="nav-links">
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Services</a>
+        <a href="#">Mission</a>
+        <a href="#">Team</a>
         <a href="#">Contact</a>
       </div>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Welcome to Our Landing Page</h1>
-    <p>Your journey starts here. Discover our services and make the most out of it!</p>
-    <button class="btn">Get Started</button>
+    <h1>Welcome to FisioImpresa</h1>
+    <p>Prevenzione & Cura</p>
+    <button class="btn">Scopri il servizio</button>
   </section>
 
   <section class="team-section" style="background: url('./images/team-bg-small.jpg') no-repeat center center/cover;">
@@ -35,18 +35,18 @@
     <div class="team-container">
       <div class="team-member">
         <img src="./images/AndreaFisio.jpeg" alt="Team Member 1">
-        <h3>John Doe</h3>
-        <p>Developer</p>
+        <h3>Luca Renzoni</h3>
+        <p>Collaboratore</p>
       </div>
       <div class="team-member center">
         <img src="./images/AndreaFisio.jpeg" alt="Team Member 2">
-        <h3>Jane Smith</h3>
-        <p>Designer</p>
+        <h3>Andrea Serafini</h3>
+        <p>CEO & Founder <br> FISIOIMPRESA</p>
       </div>
       <div class="team-member">
         <img src="./images/AndreaFisio.jpeg" alt="Team Member 3">
-        <h3>Mike Brown</h3>
-        <p>Manager</p>
+        <h3>Nicolò Saccani</h3>
+        <p>Collaboratore</p>
       </div>
     </div>
   </section>
@@ -75,7 +75,34 @@
     </div>
 </section>
 
-
+<section class="contact-section" style="background: url('./images/contact-bg.jpg') no-repeat center center/cover;">
+    <div class="contact-container">
+        <h2>Contattaci</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Nome *</label>
+                <input type="text" id="name" name="name" placeholder="Inserisci il tuo Nome" required>
+            </div>
+            <div class="form-group">
+                <label for="surname">Cognome *</label>
+                <input type="text" id="surname" name="surname" placeholder="Inserisci il tuo Cognome" required>
+            </div>
+            <div class="form-group">
+                <label for="company">Azienda</label>
+                <input type="text" id="company" name="company" placeholder="Inserisci la tua Azienda">
+            </div>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="Inserisci la tua Email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Messaggio *</label>
+                <textarea id="message" name="message" rows="4" placeholder="Inserisci il tuo Messaggio" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Invia Messaggio</button>
+        </form>
+    </div>
+</section>
 
   <script src="script.js">
 

@@ -12,6 +12,7 @@ const missionBtn = document.getElementById('mission-btn');
 const missionSection = document.getElementById('mission');
 
 missionBtn.addEventListener('click', () => {
+    console.log("Clicked")
     missionSection.scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -41,22 +42,30 @@ const reviewsContainer = document.querySelector('.reviews-container');
 const reviews = document.querySelectorAll('.review');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
+const dots = document.querySelectorAll('.dot');
 let currentIndex = 0;
 
 function updateSlider() {
     const offset = -currentIndex * 100;
     reviewsContainer.style.transform = `translateX(${offset}%)`;
+    updateDots();
 }
 
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-    updateSlider();
-});
+function updateDots() {
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+    });
+}
 
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % reviews.length;
-    updateSlider();
-});
+function startAutoScroll() {
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % reviews.length;
+        updateSlider();
+    }, 3000);
+}
+
+updateDots();
+startAutoScroll();
 
 //Contact Form
 document.getElementById("contactForm").addEventListener("submit", function (e) {

@@ -124,8 +124,8 @@ header {
 }
 
 .btn {
-  background-color: white;
-  color: var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -135,7 +135,7 @@ header {
 }
 
 .btn:hover {
-  background-color: var(--secondary-color);
+  background-color: white;
   color: var(--primary-color);
 }
 
@@ -342,6 +342,23 @@ header {
   .contact-container h2 {
     font-size: 1.5em;
   }
+
+  .card.clicked {
+    transform: translateY(-10px);
+  }
+  
+  .card.clicked .card-subtitle {
+    opacity: 1;
+  }
+  
+  .card.clicked .card-title {
+    transform: translateY(-30px); /* Slide up the title */
+  }
+  
+  .card.clicked .card-content {
+    opacity: 1;
+    transform: translateY(0); /* Slide the subtitle into view */
+  }  
 }
 
 

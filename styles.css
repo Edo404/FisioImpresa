@@ -1,10 +1,11 @@
 /* font import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* root and general */
 :root {
     --primary-color: #644cbb;
     --secondary-color: #dbeb04;
-    --third-color: #38346c
+    --third-color: #38346c;
 }
 
 * {
@@ -18,6 +19,7 @@ body {
   line-height: 1.6;
 }
 
+/* Header and Nav */
 header {
   background-color: var(--primary-color);
   color: white;
@@ -49,6 +51,28 @@ header {
   color: var(--secondary-color);
 }
 
+.nav-links {
+  display: flex;
+}
+
+.nav-links.active {
+  display: block;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -80,27 +104,7 @@ header {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-.nav-links {
-  display: flex;
-}
-
-.nav-links.active {
-  display: block;
-  background-color: var(--primary-color);
-  position: absolute;
-  top: 50px;
-  left: 0;
-  width: 100%;
-  border-radius: 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-links a {
-  display: block;
-  padding: 10px 20px;
-  text-align: center;
-}
-
+/* Home principal */
 .hero {
   padding: 100px 20px;
   text-align: center;
@@ -139,6 +143,7 @@ header {
   color: var(--primary-color);
 }
 
+/* Team Section */
 .team-section {
   background-color: var(--primary-color);
   color: white;
@@ -186,14 +191,7 @@ header {
   margin: 0;
 }
 
-
-
-
-
-
-
-
-
+/* Mission Section */
 .mission {
   text-align: center;
   padding: 100px 20px;
@@ -205,6 +203,7 @@ header {
   margin-bottom: 20px;
 }
 
+/* Cards */
 .cards-container {
   display: flex;
   justify-content: center;
@@ -286,87 +285,13 @@ header {
   background-position: center;
 }
 
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .team-section{
-    padding: 100px 20px;
-  }
-
-  .team-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .team-member img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .team-member.center img {
-    width: 170px;
-    height: 170px;
-  }
-
-
-
-  .cards-container {
-    flex-direction: column;
-    align-items: center; /* Center the cards in a column layout */
-  }
-
-  .card {
-    width: 80%;
-    height: 300px; /* Adjust height for smaller screens */
-    margin-bottom: 20px; /* Space between stacked cards */
-  }
-
-  .contact-container {
-    padding: 20px;
-  }
-
-  .contact-container h2 {
-    font-size: 1.5em;
-  }
-
-  .card.clicked {
-    transform: translateY(-10px);
-  }
-  
-  .card.clicked .card-subtitle {
-    opacity: 1;
-  }
-  
-  .card.clicked .card-title {
-    transform: translateY(-30px); /* Slide up the title */
-  }
-  
-  .card.clicked .card-content {
-    opacity: 1;
-    transform: translateY(0); /* Slide the subtitle into view */
-  }  
+.card:nth-child(4) {
+  background-image: url('./images/Mission.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
-
-
-
-
-
-/* Section Styling */
+/* Contact Section */
 .contact-section {
   display: flex;
   justify-content: center;
@@ -376,7 +301,6 @@ header {
   background: #ffffff;
 }
 
-/* Container */
 .contact-container {
   background: white;
   border-radius: 12px;
@@ -387,21 +311,18 @@ header {
   text-align: center;
 }
 
-/* Form Title */
 .contact-container h2 {
   font-size: 1.8em;
   margin-bottom: 20px;
   color: var(--third-color);
 }
 
-/* Form Styling */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-/* Input and Textarea Styles */
 .form-group {
   text-align: left;
 }
@@ -410,7 +331,6 @@ header {
   display: block;
   font-size: 0.9em;
   font-weight: bold;
-  /* color: #6b7280; */
   color: var(--third-color);
   margin-bottom: 5px;
 }
@@ -434,7 +354,6 @@ header {
   background: white;
 }
 
-/* Button Styling */
 .submit-btn {
   background: var(--primary-color);
   color: white;
@@ -455,11 +374,7 @@ header {
   transform: translateY(1px);
 }
 
-
-
-
-
-
+/* Reviews Section */
 .slider {
   position: relative;
   width: 100%;
@@ -550,4 +465,72 @@ header {
 
 .dot.active {
   background-color: var(--third-color);
+}
+
+
+/* Media MOBILE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .team-section{
+    padding: 100px 20px;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-member.center img {
+    width: 170px;
+    height: 170px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center; /* Center the cards in a column layout */
+  }
+
+  .card {
+    width: 80%;
+    height: 300px; /* Adjust height for smaller screens */
+    margin-bottom: 20px; /* Space between stacked cards */
+  }
+
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.5em;
+  }
+
+  .card.clicked {
+    transform: translateY(-10px);
+  }
+  
+  .card.clicked .card-subtitle {
+    opacity: 1;
+  }
+  
+  .card.clicked .card-title {
+    transform: translateY(-30px); /* Slide up the title */
+  }
+  
+  .card.clicked .card-content {
+    opacity: 1;
+    transform: translateY(0); /* Slide the subtitle into view */
+  }  
 }

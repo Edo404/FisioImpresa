@@ -1,18 +1,27 @@
+//Hamburger btn
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('nav-links');
 
 hamburger.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
 });
 
-// Optional JavaScript to control the hover effect more dynamically if needed
+//Mission btn - go to mission section
+const missionBtn = document.getElementById('mission-btn');
+const missionSection = document.getElementById('mission');
+
+missionBtn.addEventListener('click', () => {
+    missionSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+//Cards
 document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mouseenter', () => {
         const title = card.querySelector('.card-title');
         const subtitle = card.querySelector('.card-subtitle');
         
-        // Slide up title and show subtitle on hover
+        //On hover show subtitle and title goes up
         title.style.transform = 'translateY(-30px)';
         subtitle.style.display = 'block';
     });
@@ -21,51 +30,49 @@ document.querySelectorAll('.card').forEach(card => {
         const title = card.querySelector('.card-title');
         const subtitle = card.querySelector('.card-subtitle');
         
-        // Reset title and hide subtitle when hover ends
+        //Reset subtitle and title
         title.style.transform = 'translateY(0)';
         subtitle.style.display = 'none';
     });
 });
 
+//Reviews slider
+const reviewsContainer = document.querySelector('.reviews-container');
+const reviews = document.querySelectorAll('.review');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+function updateSlider() {
+    const offset = -currentIndex * 100;
+    reviewsContainer.style.transform = `translateX(${offset}%)`;
+}
+
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+    updateSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % reviews.length;
+    updateSlider();
+});
+
+//Contact Form
 document.getElementById("contactForm").addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Get form values
     const name = document.getElementById("name").value.trim();
     const surname = document.getElementById("surname").value.trim();
     const company = document.getElementById("company").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    // Simple validation
     if (name && surname && email && message) {
         alert("Grazie per il Messaggio!");
-        this.reset(); // Clear the form
+        this.reset();
     } else {
         alert("Per favore, compila i campi obbligatori");
     }
 });
 
-
-
-
-const reviewsContainer = document.querySelector('.reviews-container');
-        const reviews = document.querySelectorAll('.review');
-        const prevBtn = document.querySelector('.prev');
-        const nextBtn = document.querySelector('.next');
-        let currentIndex = 0;
-
-        function updateSlider() {
-            const offset = -currentIndex * 100;
-            reviewsContainer.style.transform = `translateX(${offset}%)`;
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
-            updateSlider();
-        });
-
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % reviews.length;
-            updateSlider();
-        });

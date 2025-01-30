@@ -45,3 +45,27 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         alert("Per favore, compila i campi obbligatori");
     }
 });
+
+
+
+
+const reviewsContainer = document.querySelector('.reviews-container');
+        const reviews = document.querySelectorAll('.review');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+        let currentIndex = 0;
+
+        function updateSlider() {
+            const offset = -currentIndex * 100;
+            reviewsContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % reviews.length;
+            updateSlider();
+        });

@@ -509,6 +509,11 @@ header {
   line-height: 1.6;
 }
 
+hr{
+  width: 1px;
+  color: #f9fafb;
+}
+
 
 /* Media MOBILE */
 @media (max-width: 768px) {

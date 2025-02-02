@@ -529,7 +529,8 @@ hr{
   border-radius: 50%;
   margin-left: -400px;
   margin-bottom: -700px;
-  z-index: -1;
+  position:static;
+  z-index: 2;
 }
 /* Media MOBILE */
 @media (max-width: 768px) {

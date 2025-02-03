@@ -606,3 +606,10 @@ hr{
     text-align: center;
   }
 }
+
+/* Media MINI */
+@media (max-width: 470px) {
+  .circle-fasi{
+    display: none;
+  }
+}

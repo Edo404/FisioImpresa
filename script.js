@@ -12,8 +12,23 @@ const missionBtn = document.getElementById('mission-btn');
 const missionSection = document.getElementById('mission');
 
 missionBtn.addEventListener('click', () => {
-    console.log("Clicked")
     missionSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+//Team btn - go to team section
+const teamBtn = document.getElementById('team-btn');
+const teamSection = document.getElementById('team-section');
+
+teamBtn.addEventListener('click', () => {
+    teamSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+//Contact btn - go to contat section
+const contactBtn = document.getElementById('contact-btn');
+const contactSection = document.getElementById('contact-section');
+
+contactBtn.addEventListener('click', () => {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
 });
 
 //Cards

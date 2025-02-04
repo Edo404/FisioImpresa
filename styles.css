@@ -385,6 +385,7 @@ header {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  z-index: 3;
 }
 
 .reviews-container {
@@ -525,7 +526,7 @@ hr{
 }
 
 .inside{
-  width: 345px;
+  width: 350px;
   height: 200px;
   background-color: var(--primary-color);
   margin-left: -400px;
@@ -544,6 +545,19 @@ hr{
   margin-bottom: -1000px;
   position:static;
 }
+
+/* Media TABLET */
+@media (max-width: 970px) {
+  .circle{
+    display: none;
+  }
+  
+  .inside{
+    display: none;
+  }
+}
+
+
 /* Media MOBILE */
 @media (max-width: 768px) {
   .nav-links {
